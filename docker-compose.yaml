@@ -1,0 +1,11 @@
+services:
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: automation-core-rust
+    restart: unless-stopped
+    environment:
+     .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
