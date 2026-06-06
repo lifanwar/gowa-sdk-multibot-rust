@@ -7,5 +7,6 @@ services:
     restart: unless-stopped
     env_file:
       - .env
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    mem_limit: 15m
+    memswap_limit: 15m
+    cpus: "0.10"

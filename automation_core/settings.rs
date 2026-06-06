@@ -28,7 +28,7 @@ impl Settings {
             pubsub_channel_name: env_optional("PUBSUB_CHANNEL_NAME"),
             pubsub_channel_prefix: env_or("PUBSUB_CHANNEL_PREFIX", "wa:incoming"),
             pubsub_poll_timeout_seconds: parse_env_or("PUBSUB_POLL_TIMEOUT_SECONDS", 1.0),
-            redis_reconnect_sleep_seconds: parse_env_or("REDIS_RECONNECT_SLEEP_SECONDS", 2.0),
+            redis_reconnect_sleep_seconds: parse_env_or("REDIS_RECONNECT_SLEEP_SECONDS", 5.0),
             gowa_base_url: env_or("GOWA_BASE_URL", "http://localhost:3000"),
             gowa_device_id: env_optional("GOWA_DEVICE_ID"),
             gowa_send_message_path: env_or("GOWA_SEND_MESSAGE_PATH", "/send/message"),
