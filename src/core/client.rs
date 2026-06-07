@@ -11,7 +11,7 @@ use std::{
 use tokio::sync::Mutex as AsyncMutex;
 use tracing::{error, info};
 
-use crate::{
+use super::{
     events::{MessageEv, StartedEv},
     gowa_api::GoWaApi,
     message::{is_truthy_value, value_to_string, IncomingMessage, Payload},

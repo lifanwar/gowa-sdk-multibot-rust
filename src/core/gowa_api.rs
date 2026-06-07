@@ -3,7 +3,7 @@ use reqwest::{header, Client};
 use serde_json::{json, Map, Value};
 use urlencoding::encode;
 
-use crate::settings::Settings;
+use super::settings::Settings;
 
 #[derive(Debug, Clone)]
 pub struct GoWaApi {
