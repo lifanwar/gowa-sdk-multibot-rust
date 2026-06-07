@@ -23,8 +23,10 @@ fn init_tracing() {
 
 async fn handle_started(event: StartedEv) -> Result<()> {
     println!(
-        "{{"status":"started","bot_name":"{}","device_id":"{}","channel":"{}"}}",
-        event.bot_name, event.device_id, event.channel_name
+        r#"{{"status":"started","bot_name":"{}","device_id":"{}","channel":"{}"}}"#,
+        event.bot_name,
+        event.device_id,
+        event.channel_name
     );
 
     Ok(())
@@ -35,7 +37,7 @@ async fn handle_message(client: AutomationClient, event: MessageEv) -> Result<()
     let text = message.text.to_lowercase().trim().to_string();
 
     println!(
-        "{{"event":"{}","device_id":"{}","message_id":{:?},"chat_id":{:?},"sender":{:?},"direction":"{}","text":"{}","has_media":{} }}",
+        r#"{{"event":"{}","device_id":"{}","message_id":{:?},"chat_id":{:?},"sender":{:?},"direction":"{}","text":"{}","has_media":{}}}"#,
         event.event_name,
         event.device_id,
         message.id,
@@ -45,7 +47,6 @@ async fn handle_message(client: AutomationClient, event: MessageEv) -> Result<()
         message.text,
         message.has_media()
     );
-
     if message.is_group {
         return Ok(());
     }
