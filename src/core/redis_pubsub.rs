@@ -5,7 +5,7 @@ use serde_json::{Map, Value};
 use tokio::time::{sleep, timeout, Duration, Instant};
 use tracing::warn;
 
-use crate::settings::Settings;
+use super::settings::Settings;
 
 pub struct RedisPubSubSubscriber {
     settings: Settings,
